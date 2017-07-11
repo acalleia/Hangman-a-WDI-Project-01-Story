@@ -16,8 +16,53 @@ I expect to encounter some difficulties creating a variable of arrays or divs to
 
 ## Phases of Completion
 
-Phase 0 - create library of words and make a way to pull a word from it randomly and subsequently broken into an array of letters. This 
+Phase 0 - Game Setup
+    
+    Create library of words and make a way to pull a word from it randomly and subsequently broken into an array of letters. 
+
+    make container div holding image of hanged man.
+
+    make divs that 'cover' hanged man.
+
+    Have array of letters be represented as hidden p tags inside of divs that have border bottom to imitate underlined letters.
+
+    Create 26 divs for each letter with a toggle function event listener on click to check the array of letters for a match.
+
+Phase 1- Game Logic
+    
+    Once a letter is matched it should:
+        reveal the hidden p tag;
+        remove the underlined div;
+        
+        change the letter div itself:
+            remove event listener;
+            look 'spent'; 
+
+    If the letter does not match:
+        remove a 'cover' div;
+
+        change the letter div itself:
+            remove event listener;
+            look 'spent';
+
+Phase 2- Win Conditions
+    If word is revealed:
+        display win image;
+        prompt to play again;
+
+    If is hanged man is revealed:
+        zoom in on hanged man;
+        prompt to play again;
+
+Phase 3- Bonus
+
+    Create intro animations;
+    animate fire;
+    animate tree;
+    make ALL the pictures;
+
+
 
 ## Links and Resources
 
-(Anything you've looked up so far or are thinking about using.)
+CSS the book any book 
