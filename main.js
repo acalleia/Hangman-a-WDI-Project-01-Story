@@ -10,12 +10,16 @@ console.log('script.js loaded successfully');
 
   let splitter = word.split('');
 
+  let winCon = 0;
+
+  let loseCon = 0;
+
   console.log(splitter);
 
   let $wordDiv = $('<div class = "letters"></div>').appendTo('body');
 
   for(let i = 0; i < splitter.length; i++){
-    $(`<span>${splitter[i]}</span>`).appendTo('.letters');
+    $(`<span class  = ${splitter[i]}>${splitter[i]}</span>`).appendTo('.letters');
   }
 
 let letters = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l",
@@ -26,20 +30,40 @@ for(let i = 0; i < letters.length; i++) {
   $lettersDiv.appendTo('body');
   $lettersDiv.click(function(){
     for(let j = 0; j < splitter.length; j++) {
+      let $splitWord = $(this).text();
     if (letters[i] == splitter[j]){
+        winCon++;
         console.log('sweet');
-      } else{
+        console.log($(this).text());
+        $('.letters').find(`.${$splitWord}`).css("color", "white");
+
+             if(winCon == splitter.length){
+                 console.log('you Win!');
+                 $('#win').css("display", "block")
+                  }
+    } else{
+        loseCon++;
+        if(loseCon == splitter.length*5){
+          $('#lose').css("display", "block")
+        }
         console.log('sux');
       }
     }
   })
-  console.log(letters[i]);
 }
 
 
 
 
 
+ //if($(".letters span.selected").css("color", "white") == $(".letters span").css("color", "white")){
+ //      console.log('you win bitch');
+ //        } else {
+ //        console.log('keep trying');
+ //       }
+
+
 });
 //create a user input for username on localStorage
 //for name and highscrore
+//create a prototype to conctrol boolean values

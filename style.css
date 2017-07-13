@@ -1,0 +1,33 @@
+
+span{
+  border-bottom: solid white 5px;
+  width: 20px;
+  display: inline-block;
+  text-align: center;
+  margin: 0 20px 20px;
+}
+
+#win{
+  background-color: red;
+  width: 100vw;
+  height: 100vw;
+  color: white;
+  font-size: 100px;
+  display: none;
+}
+
+#lose{
+  background-color: red;
+  width: 100vw;
+  height: 100vw;
+  color: Black;
+  font-size: 100px;
+  display: none;
+}
+
+body {
+  background-color: black;
+  text-align: center;
+}
+
+
