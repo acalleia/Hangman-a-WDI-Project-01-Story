@@ -20,7 +20,7 @@ $gameStart.one("click", function(){
   $('.game-start').fadeOut('slow');
 
 
-  let theWords = ["death", "rainbow", "flay", "heart", "love", "maim", "murder", "anemia", "daniel"];
+  let theWords = ["DEATH", "RAINBOW", "FLAY", "HEART", "LOVE", "MAIM", "MURDER", "SURRENDER", "BUTTERFLY"];
 
   let word = theWords[Math.floor(Math.random() * theWords.length)];
 
@@ -35,11 +35,15 @@ $gameStart.one("click", function(){
   let $wordDiv = $('<div class = "letters"></div>').appendTo('body');
 
   for(let i = 0; i < splitter.length; i++){
-    $(`<span class  = ${splitter[i]}>${splitter[i]}</span>`).appendTo('.letters');
+
+    $('<span>',{
+      class: `${splitter[i]}`,
+      text: `${splitter[i]}`
+    }).appendTo('.letters')
   }
 
-let letters = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l",
-"m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z"];
+let letters = ["A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L",
+"M", "N", "O", "P", "Q", "R", "S", "T", "U", "V", "W", "X", "Y", "Z"];
 
 for(let i = 0; i < letters.length; i++) {
   let $lettersDiv = $(`<button class = ${letters[i]}>`).text(letters[i]);
