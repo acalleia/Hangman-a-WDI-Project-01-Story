@@ -1,8 +1,12 @@
 $(function () {
 
-
-
 console.log('script.js loaded successfully');
+
+let $gameStart = $('.game')
+
+$gameStart.one("click", function(){
+
+  $('.game-start').fadeOut('slow');
 
   let theWords = ["death", "rainbow", "flay", "heart", "love", "maim", "murder", "anemia", "daniel"];
 
@@ -26,7 +30,7 @@ let letters = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l",
 "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z"];
 
 for(let i = 0; i < letters.length; i++) {
-  let $lettersDiv = $(`<button class = ${letters[i]}>`).text(letters[i]);
+  let $lettersDiv = $(`<button class = "click-me" id = ${letters[i]}>`).text(letters[i]);
   $lettersDiv.appendTo('body');
   $lettersDiv.click(function(){
     for(let j = 0; j < splitter.length; j++) {
@@ -52,7 +56,7 @@ for(let i = 0; i < letters.length; i++) {
   })
 }
 
-
+});
 
 
 

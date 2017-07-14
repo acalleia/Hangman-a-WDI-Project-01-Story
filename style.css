@@ -30,4 +30,53 @@ body {
   text-align: center;
 }
 
+.lightning {
+  width: 100vw;
+  height: 100vw;
+  position: absolute;
+  opacity: 1;
+  z-index: -9;
+  animation: flash 10s infinite linear;
+}
 
+
+.game-start {
+  background-color: black;
+  width: 100vw;
+  height: 100vw;
+  position: absolute;
+  opacity: 1;
+}
+
+.red {
+  background-color: red;
+  width: 100vw;
+  height: 100vw;
+  position: absolute;
+  opacity: .2;
+  display: none;
+}
+
+.game {
+  background-color: transparent;
+  border: 0px;
+}
+
+.game:focus{
+  outline: none;
+}
+
+@keyframes flash{
+  0%{
+    opacity: 1;
+  }
+  10%{
+    opacity: .5;
+  }
+  12%{
+    opacity: 0;
+  }
+  100%{
+    opacity: 0;
+  }
+}
