@@ -4,9 +4,21 @@ console.log('script.js loaded successfully');
 
 let $gameStart = $('.game')
 
+$('.startButton').hover(function(){
+  $('.startButton').attr(
+    'src',"images/Start-Green.png"
+  )},
+  function(){
+    $('.startButton').attr(
+    'src', 'images/Start-Button.png'
+  );
+})
+
+
 $gameStart.one("click", function(){
 
   $('.game-start').fadeOut('slow');
+
 
   let theWords = ["death", "rainbow", "flay", "heart", "love", "maim", "murder", "anemia", "daniel"];
 
@@ -30,13 +42,14 @@ let letters = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l",
 "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z"];
 
 for(let i = 0; i < letters.length; i++) {
-  let $lettersDiv = $(`<button class = "click-me" id = ${letters[i]}>`).text(letters[i]);
+  let $lettersDiv = $(`<button class = ${letters[i]}>`).text(letters[i]);
   $lettersDiv.appendTo('body');
   $lettersDiv.click(function(){
     for(let j = 0; j < splitter.length; j++) {
       let $splitWord = $(this).text();
     if (letters[i] == splitter[j]){
         winCon++;
+        loseCon++;
         console.log('sweet');
         console.log($(this).text());
         $('.letters').find(`.${$splitWord}`).css("color", "white");
@@ -46,11 +59,13 @@ for(let i = 0; i < letters.length; i++) {
                  $('#win').css("display", "block")
                   }
     } else{
-        loseCon++;
-        if(loseCon == splitter.length*5){
-          $('#lose').css("display", "block")
-        }
+        loseCon--;
+
+              if(loseCon == splitter.length*5*-1){
+                 $('#lose').css("display", "block")
+               }
         console.log('sux');
+        console.log(loseCon);
       }
     }
   })
