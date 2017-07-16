@@ -1,15 +1,38 @@
 
 span{
-  border-bottom: solid white 5px;
+
   width: 20px;
   display: inline-block;
   text-align: center;
   margin: 0 20px 20px;
+  visibility: hidden;
+  color: white;
+}
+
+.underline{
+  display: inline;
+  margin-right: 2vw;
+  border-bottom: solid white 5px;
+}
+
+button{
+    background-color: #ba65a8;
+    border: none;
+    color: white;
+    padding: 7px 15px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 25px;
+    margin: 4px 2px;
+    cursor: pointer;
+    border-radius: 3px;
+    font-family: 'VT323', monospace;
 }
 
 #imALetter{
   font-size:
-  font-family: 'VT323', monospace;
+
 }
 
 #click-me{
@@ -52,6 +75,7 @@ body {
 .letters{
   font-family: 'VT323', monospace;
   font-size: 35px;
+
 }
 
 .game-start {

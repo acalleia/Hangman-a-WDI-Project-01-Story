@@ -35,11 +35,11 @@ $gameStart.one("click", function(){
   let $wordDiv = $('<div class = "letters"></div>').appendTo('body');
 
   for(let i = 0; i < splitter.length; i++){
-
+      let $wordVar = $('<div class= "underline">').appendTo('.letters');
     $('<span>',{
       class: `${splitter[i]}`,
       text: `${splitter[i]}`
-    }).appendTo('.letters')
+    }).appendTo($wordVar);
   }
 
 let letters = ["A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L",
@@ -48,15 +48,25 @@ let letters = ["A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L",
 for(let i = 0; i < letters.length; i++) {
   let $lettersDiv = $(`<button class = ${letters[i]}>`).text(letters[i]);
   $lettersDiv.appendTo('body');
-  $lettersDiv.click(function(){
+  $lettersDiv.one("click", function(){
+    $lettersDiv.css({
+      backgroundColor: "#42bb93",
+      color: "black"});
     for(let j = 0; j < splitter.length; j++) {
       let $splitWord = $(this).text();
     if (letters[i] == splitter[j]){
         winCon++;
-        loseCon++;
+          loseCon++;
+          console.log(loseCon);
         console.log('sweet');
         console.log($(this).text());
-        $('.letters').find(`.${$splitWord}`).css("color", "white");
+        $('.underline').find(`.${$splitWord}`).css("visibility", "visible");
+
+        for(let j=0; j<splitter.length; j++){
+          if (letters[i] != splitter[j]){
+            loseCon++;
+          }
+        }
 
              if(winCon == splitter.length){
                  console.log('you Win!');
