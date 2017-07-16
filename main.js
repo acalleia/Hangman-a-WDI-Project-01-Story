@@ -19,6 +19,10 @@ $gameStart.one("click", function(){
 
   $('.game-start').fadeOut('slow');
 
+  let $storyButton = $('#story');
+  $storyButton.one("click", function(){
+    $('#story').fadeOut(3000)
+  });
 
   let theWords = ["DEATH", "REIGN", "FLAY", "MANGY", "SLAUGHTER", "HERETIC", "MURDER AGAIN", "AVENGE", "JUSTIFY", "DISASTER",
   "DUNGEON", "PESTILENCE"];

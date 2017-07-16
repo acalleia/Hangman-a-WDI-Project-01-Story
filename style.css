@@ -14,6 +14,32 @@ span{
   margin-right: 2vw;
   border-bottom: solid white 5px;
 }
+#story{
+  top: 0%;
+  display: block;
+  background-color: black;
+  height: 100vw;
+  width: 100vw;
+  position: absolute;
+
+}
+#king{
+  padding-left: 75px;
+  padding-right: 75px;
+  width: 400px;
+  display:block;
+  float: left;
+}
+
+.stext{
+  top: 0%;
+  padding-right: 175px;
+  font-size: 35px;
+  font-family: 'VT323', monospace;
+  color: white;
+  display: block;
+  text-align: left;
+}
 
 button{
     background-color: #ba65a8;
