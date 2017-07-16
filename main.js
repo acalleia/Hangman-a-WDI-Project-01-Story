@@ -20,7 +20,8 @@ $gameStart.one("click", function(){
   $('.game-start').fadeOut('slow');
 
 
-  let theWords = ["DEATH", "RAINBOW", "FLAY", "HEART", "LOVE", "MAIM", "MURDER", "SURRENDER", "BUTTERFLY"];
+  let theWords = ["DEATH", "REIGN", "FLAY", "MANGY", "SLAUGHTER", "HERETIC", "MURDER AGAIN", "AVENGE", "JUSTIFY", "DISASTER",
+  "DUNGEON", "PESTILENCE"];
 
   let word = theWords[Math.floor(Math.random() * theWords.length)];
 
