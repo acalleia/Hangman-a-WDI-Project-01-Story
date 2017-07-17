@@ -59,7 +59,7 @@ let $lettterButtons = $('<div class= "lettterbuttons">').appendTo('.container')
 
 for(let i = 0; i < letters.length; i++) {
 
-  letters.Map = 0;
+  letters.map = 0;
 
   let $lettersDiv = $(`<button class = ${letters[i]}>`).text(letters[i]);
 
@@ -77,8 +77,8 @@ for(let i = 0; i < letters.length; i++) {
 
       if ($(this).text() === splitter[j]){
         winCon++;
-        letters.Map += 1;
-        console.log(letters.Map);
+        letters.map += 1;
+        console.log(letters.map);
          // console.log(loseCon);
         // console.log('sweet');
         console.log($(this).text());
@@ -97,11 +97,11 @@ for(let i = 0; i < letters.length; i++) {
     }
     }
 
-   if(letters.Map < 1) {
+   if(letters.map < 1) {
         loseCon++;
-        letters.Map -= 1;
+        letters.map -= 1;
           console.log(loseCon);
-          console.log(letters.Map);
+          console.log(letters.map);
           // letters.Changes = 0;
           if (loseCon == 1) {
             $('.hung').css("opacity", ".05");
@@ -132,7 +132,7 @@ for(let i = 0; i < letters.length; i++) {
         console.log('sux');
 
       }
-      letters.Map = 0;
+      letters.map = 0;
 
   })
 
