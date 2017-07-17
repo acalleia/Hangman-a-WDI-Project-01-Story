@@ -24,7 +24,7 @@ $gameStart.one("click", function(){
     $('#story').fadeOut(3000)
   });
 
-  let theWords = ["DEATH", "REIGN", "FLAY", "MANGY", "SLAUGHTER", "HERETIC", "MURDER AGAIN", "AVENGE", "JUSTIFY", "DISASTER",
+  let theWords = ["DEATH", "REIGN", "FLAY", "MANGY", "SLAUGHTER", "HERETIC", "MURDER", "AVENGE", "JUSTIFY", "DISASTER",
   "DUNGEON", "PESTILENCE"];
 
   let word = theWords[Math.floor(Math.random() * theWords.length)];
@@ -50,45 +50,73 @@ $gameStart.one("click", function(){
 let letters = ["A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L",
 "M", "N", "O", "P", "Q", "R", "S", "T", "U", "V", "W", "X", "Y", "Z"];
 
+
+
+let $lettterButtons = $('<div class= "lettterbuttons">').appendTo('body')
+
 for(let i = 0; i < letters.length; i++) {
+
+  letters.Changes = 0;
+
   let $lettersDiv = $(`<button class = ${letters[i]}>`).text(letters[i]);
-  $lettersDiv.appendTo('body');
-  $lettersDiv.one("click", function(){
-    $lettersDiv.css({
+
+  $lettersDiv.appendTo('.lettterbuttons');
+};
+
+  $('.lettterbuttons button').click( function(){
+
+    $(this).css({
       backgroundColor: "#42bb93",
-      color: "black"});
+      color: "white"});
+
     for(let j = 0; j < splitter.length; j++) {
       let $splitWord = $(this).text();
-    if (letters[i] == splitter[j]){
+
+      if ($(this).text() === splitter[j]){
         winCon++;
-          loseCon++;
-          console.log(loseCon);
-        console.log('sweet');
+        letters.Changes += 1;
+        console.log(letters.Changes);
+         // console.log(loseCon);
+        // console.log('sweet');
         console.log($(this).text());
         $('.underline').find(`.${$splitWord}`).css("visibility", "visible");
-
-        for(let j=0; j<splitter.length; j++){
-          if (letters[i] != splitter[j]){
-            loseCon++;
-          }
-        }
+          //
+        // for(let j=0; j<splitter.length; j++){
+        //   if (letters[i] != splitter[j]){
+        //     loseCon++;
+        //   }
+        // }
 
              if(winCon == splitter.length){
                  console.log('you Win!');
                  $('#win').css("display", "block")
                   }
-    } else{
-        loseCon--;
-
-              if(loseCon == splitter.length*5*-1){
-                 $('#lose').css("display", "block")
-               }
-        console.log('sux');
-        console.log(loseCon);
-      }
     }
+    }
+
+   if(letters.Changes < 1) {
+        loseCon++;
+        letters.Changes -= 1;
+          console.log(loseCon);
+          console.log(letters.Changes);
+          // letters.Changes = 0;
+          if(loseCon == 5){
+                 $('#lose').css("display", "block");
+
+               };
+            // if( (splitter.length % loseCon) == 5 ){
+            //   $('.hung').css("opacity", ".2");
+            //   console.log('opacity');
+            // }
+// loseCon == splitter.length*5*-1)
+
+        console.log('sux');
+
+      }
+      letters.Changes = 0;
+
   })
-}
+
 
 });
 
