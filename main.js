@@ -24,8 +24,8 @@ $gameStart.one("click", function(){
     $('#story').fadeOut(3000)
   });
 
-  let theWords = ["DEATH", "REIGN", "FLAY", "MANGY", "SLAUGHTER", "HERETIC", "MURDER", "AVENGE", "JUSTIFY", "DISASTER",
-  "DUNGEON", "PESTILENCE"];
+  let theWords = ["DEATH", "REIGN", "FLAY", "MANGY", "SLAUGHTER", "HERETIC", "MURDER", "AVENGE", "JUSTIFY",
+  "DISASTER", "DUNGEON", "PESTILENCE"];
 
   let word = theWords[Math.floor(Math.random() * theWords.length)];
 
@@ -37,7 +37,7 @@ $gameStart.one("click", function(){
 
   console.log(splitter);
 
-  let $wordDiv = $('<div class = "letters"></div>').appendTo('body');
+  let $wordDiv = $('<div class = "letters"></div>').appendTo('.container');
 
   for(let i = 0; i < splitter.length; i++){
       let $wordVar = $('<div class= "underline">').appendTo('.letters');
@@ -52,7 +52,7 @@ let letters = ["A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L",
 
 
 
-let $lettterButtons = $('<div class= "lettterbuttons">').appendTo('body')
+let $lettterButtons = $('<div class= "lettterbuttons">').appendTo('.container')
 
 for(let i = 0; i < letters.length; i++) {
 
@@ -100,12 +100,28 @@ for(let i = 0; i < letters.length; i++) {
           console.log(loseCon);
           console.log(letters.Changes);
           // letters.Changes = 0;
+          if (loseCon == 1) {
+            $('.hung').css("opacity", ".05");
+          }
+
+          if (loseCon == 2) {
+            $('.hung').css("opacity", ".1");
+          }
+
+          if (loseCon == 3) {
+            $('.hung').css("opacity", ".3");
+          }
+
+          if (loseCon == 4) {
+            $('.hung').css("opacity", ".5");
+          }
+
           if(loseCon == 5){
                  $('#lose').css("display", "block");
 
                };
             // if( (splitter.length % loseCon) == 5 ){
-            //   $('.hung').css("opacity", ".2");
+            //
             //   console.log('opacity');
             // }
 // loseCon == splitter.length*5*-1)

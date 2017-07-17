@@ -79,6 +79,13 @@ body {
   text-align: center;
 }
 
+.container{
+  overflow: hidden;
+  position: relative;
+  height: 725px;
+  }
+
+
 .lightning2 {
   top: 0;
   left: 0;
@@ -88,9 +95,14 @@ body {
 }
 
 .letters{
+  position: absolute;
   font-family: 'VT323', monospace;
   font-size: 35px;
-  z-index: -1;
+  z-index: -5;
+  bottom: 4vw;
+  right: 0;
+  left: 0;
+  margin:0 auto;
 }
 
 .game-start {
@@ -113,13 +125,11 @@ body {
   outline: none;
 }
 
-.letters{
-  position: relative;
-  top: 30px;
-}
 
 .lettterbuttons{
-  margin-top: 50px;
+  margin-top: 675px;
+  right: 255px;
+
 }
 
 .bg {
@@ -130,10 +140,14 @@ body {
 }
 
 .hung{
-  margin-top: 18%;
-  margin-left: 145px;
+  position: absolute;
+  top: 250px;
+  right: 570px;
+  opacity: 1;
+  z-index: -5;
   opacity: 0;
 }
+
 
 @keyframes flash{
   0%{
@@ -149,3 +163,34 @@ body {
     opacity: 0;
   }
 }
+
+@media only screen
+and (min-width: 375px)
+and (max-width: 667px){
+
+      .container{
+    height: 900px;
+  }
+
+      .lightning2{
+        content: url('images/lightning-media.png');
+      }
+
+      .bg{
+        content: url('images/hanging-tree-media.png');
+      }
+
+      .hung{
+        content: url('images/hung-man-media.png');
+        top: 1px;
+        right: 5px;
+      }
+
+      .letters{
+        bottom: 55vw;
+      }
+
+
+}
+
+
