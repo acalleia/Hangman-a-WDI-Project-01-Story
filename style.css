@@ -56,22 +56,39 @@ button{
     font-family: 'VT323', monospace;
 }
 
+.resetButton{
+  color: white;
+  content: url('http://exporter-schools-27746.bitballoon.com/');
+}
+
 #win{
+  margin-top: 0px;
   background-color: red;
   width: 100vw;
   height: 100vw;
   color: white;
   font-size: 100px;
   display: none;
+  font-family: 'VT323', monospace;
 }
 
 #lose{
+  margin-top: 0px;
   background-color: red;
+  font-family: 'VT323', monospace;
   width: 100vw;
   height: 100vw;
   color: Black;
   font-size: 100px;
   display: none;
+}
+
+#lose p{
+  margin-top:0;
+}
+
+#win p{
+  margin-top:0;
 }
 
 body {

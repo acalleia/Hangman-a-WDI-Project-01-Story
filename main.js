@@ -14,6 +14,9 @@ $('.startButton').hover(function(){
   );
 })
 
+$('.resetButton').click(function() {
+  window.location.reload();
+});
 
 $gameStart.one("click", function(){
 
@@ -21,7 +24,7 @@ $gameStart.one("click", function(){
 
   let $storyButton = $('#story');
   $storyButton.one("click", function(){
-    $('#story').fadeOut(3000)
+    $('#story').fadeOut(2000)
   });
 
   let theWords = ["DEATH", "REIGN", "FLAY", "MANGY", "SLAUGHTER", "HERETIC", "MURDER", "AVENGE", "JUSTIFY",
